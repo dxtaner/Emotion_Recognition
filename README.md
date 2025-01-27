@@ -1,74 +1,83 @@
+Emotion Recognition
+===================
 
-<body>
-    <h1>Emotion Recognition </h1>
-    <p>Bu proje, kullanıcının yüz ifadesine göre duygularını tanımlayan bir Emotion Recognition'si sağlar.</p>
-  <h2>Başlangıç</h2>
+This project provides an Emotion Recognition system that identifies emotions based on the user's facial expressions.
 
-<p>Bu yönergeler, projeyi yerel makinenizde çalıştırmak veya test etmek için size yol gösterecektir.</p>
+Getting Started
+---------------
 
-<h3>Gereksinimler</h3>
+These instructions will guide you to run or test the project on your local machine.
 
-<p>Bu projeyi çalıştırmak için aşağıdaki yazılım ve araçlara ihtiyacınız olacaktır:</p>
+### Requirements
 
-<ul>
-    <li>Python 3.x</li>
-    <li>OpenCV (Computer Vision Library)</li>
-    <li>Tensorflow (Machine Learning Library)</li>
-</ul>
+To run this project, you will need the following software and tools:
 
-<h3>Kurulum</h3>
+*   Python 3.x
+*   OpenCV (Computer Vision Library)
+*   Tensorflow (Machine Learning Library)
 
-<ol>
-    <li>Bu repo'yu klonlayın:</li>
+### Installation
 
-    <pre><code>git clone https://github.com/dxtaner/emotion_recognition.git</code></pre>
+1.  Clone this repository:
 
-    <li>Gerekli paketleri yükleyin:</li>
+    git clone https://github.com/dxtaner/emotion_recognition.git
 
-    <pre><code>pip install opencv-python tensorflow</code></pre>
+3.  Install the required packages:
 
-    <li>duygutanima.ipynb'yi çalıştırın:</li>
+    pip install opencv-python tensorflow
 
-</ol>
+5.  Run `duygutanima.ipynb`:
 
-<h2>Kullanım</h2>
+Usage
+-----
 
-<p>API, sadece bir JSON isteği alır ve JSON yanıtı döndürür. İstek, <code>image_url</code> alanını içermelidir ve analiz edilecek resmin URL'sini içermelidir.</p>
+The API only accepts a JSON request and returns a JSON response. The request should include the `image_url` field, containing the URL of the image to be analyzed.
 
-<p>API aşağıdaki duyguları tanıyabilir:</p>
+The API can recognize the following emotions:
 
-<ul>
-    <li>Mutlu</li>
-    <li>Üzgün</li>
-    <li>Kızgın</li>
-    <li>Şaşkın</li>
-    <li>Korkmuş</li>
-    <li>Nötr</li>
-</ul>
+*   Happy
+*   Sad
+*   Angry
+*   Surprised
+*   Fearful
+*   Neutral
 
-<p> sonuç olarak en yüksek güven skoruna sahip duyguyu döndürür.</p>
-    
-<h1>Eğitim Verisi için Ön İşleme</h1>
-<p>Örnek sayısı: 28709</p>
-<h2>Eğitim Verisi İçin Model Oluşturma</h2>
-<p>Kullanılan model: Convolutional Neural Network (CNN)</p>
-<h3>Model Yapısı</h3>
-<ul>
-  <li>1. Katman: 64 filtreli 3x3 boyutunda bir Conv2D katmanı</li>
-  <li>2. Katman: 64 filtreli 3x3 boyutunda bir Conv2D katmanı</li>
-  <li>3. Katman: 32 filtreli 3x3 boyutunda bir Conv2D katmanı</li>
-  <li>4. Katman: 32 filtreli 3x3 boyutunda bir Conv2D katmanı</li>
-  <li>5. Katman: 32 filtreli 3x3 boyutunda bir Conv2D katmanı</li>
-  <li>Tam Bağlantı Katmanı: 128 nöronlu bir Dense katmanı</li>
-  <li>Çıkış Katmanı: 7 nöronlu bir Dense katmanı</li>
-</ul>
-<h3>Model Eğitimi</h3>
-<p>Eğitim süresi: 25 epoch</p>
-<p>Batch boyutu: 100</p>
-<h2>Test Verisi İçin Ön İşleme</h2>
-<p>Test örnek sayısı: 3589</p>
-<h2>Model Performansı</h2>
-<p>Doğruluk (accuracy) değeri: 0.53</p>
-<p>Kayıp (loss) değeri: 1.14</p>
+It returns the emotion with the highest confidence score as the result.
 
+Preprocessing for Training Data
+===============================
 
+Number of samples: 28,709
+
+Model Creation for Training Data
+--------------------------------
+
+Model used: Convolutional Neural Network (CNN)
+
+### Model Structure
+
+*   Layer 1: Conv2D layer with 64 filters of size 3x3
+*   Layer 2: Conv2D layer with 64 filters of size 3x3
+*   Layer 3: Conv2D layer with 32 filters of size 3x3
+*   Layer 4: Conv2D layer with 32 filters of size 3x3
+*   Layer 5: Conv2D layer with 32 filters of size 3x3
+*   Fully Connected Layer: Dense layer with 128 neurons
+*   Output Layer: Dense layer with 7 neurons
+
+### Model Training
+
+Training time: 25 epochs
+
+Batch size: 100
+
+Preprocessing for Test Data
+---------------------------
+
+Number of test samples: 3,589
+
+Model Performance
+-----------------
+
+Accuracy: 0.53
+
+Loss: 1.14
